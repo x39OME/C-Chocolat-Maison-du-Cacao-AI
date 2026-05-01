@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chocolat — Maison du Cacao depuis 2002</title>
+  <meta name="description" content="Chocolat — A Milanese chocolate atelier crafting artisanal gelato and chocolate experiences since 2002." />
+
+  <!-- Fonts: editorial serif + refined sans + accent script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__inner">
+      <div class="loader__mark">C</div>
+      <div class="loader__line"><span></span></div>
+      <div class="loader__text">Maison du Cacao</div>
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar__marquee" aria-hidden="true">
+      <div class="topbar__track">
+        <span>Free shipping above €60</span><span>✦</span>
+        <span>New seasonal collection — Cacao Noir</span><span>✦</span>
+        <span>Milano · Singapore · Jeddah</span><span>✦</span>
+        <span>Maison du Cacao — est. 2002</span><span>✦</span>
+        <span>Free shipping above €60</span><span>✦</span>
+        <span>New seasonal collection — Cacao Noir</span><span>✦</span>
+        <span>Milano · Singapore · Jeddah</span><span>✦</span>
+        <span>Maison du Cacao — est. 2002</span><span>✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__brand">
+        <span class="nav__brand-mark">C</span>
+        <span class="nav__brand-text">
+          <span class="nav__brand-name">Chocolat</span>
+          <span class="nav__brand-sub">Maison du Cacao</span>
+        </span>
+      </a>
+
+      <nav class="nav__menu">
+        <a href="#story" data-num="01">Story</a>
+        <a href="#collection" data-num="02">Collection</a>
+        <a href="#atelier" data-num="03">Atelier</a>
+        <a href="#journal" data-num="04">Journal</a>
+        <a href="#visit" data-num="05">Visit</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="nav__search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="nav__cart" id="navCart" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="nav__cart-count" id="cartCount">0</span>
+        </button>
+        <a href="#visit" class="nav__cta">
+          <span>Reserve</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+        <button class="nav__burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" id="heroBg">
+      <div class="hero__slide is-active" style="background-image:url('https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1610450949065-1f2841536c88?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1582176604856-e824b4736522?auto=format&fit=crop&w=2000&q=80')"></div>
+      <div class="hero__bg-overlay"></div>
+    </div>
+
+    <!-- Slider indicators -->
+    <div class="hero__dots" id="heroDots">
+      <button class="hero__dot is-active" data-i="0" aria-label="Slide 1"><span class="label">01</span></button>
+      <button class="hero__dot" data-i="1" aria-label="Slide 2"><span class="label">02</span></button>
+      <button class="hero__dot" data-i="2" aria-label="Slide 3"><span class="label">03</span></button>
+      <button class="hero__dot" data-i="3" aria-label="Slide 4"><span class="label">04</span></button>
+      <button class="hero__dot" data-i="4" aria-label="Slide 5"><span class="label">05</span></button>
+      <button class="hero__dot" data-i="5" aria-label="Slide 6"><span class="label">06</span></button>
+    </div>
+
+    <div class="hero__decor">
+      <div class="hero__year">2002 — 2026</div>
+      <div class="hero__lat">45°27'N · 9°11'E</div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="dot"></span>
+        <span>Milano · Italy</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="line"><em>The art</em></span>
+        <span class="line">of <span class="hero__amp">&amp;</span> cacao</span>
+        <span class="line script"><i>la dolce vita</i></span>
+      </h1>
+
+      <p class="hero__lead" id="heroLead">
+        A Milanese atelier where bean meets craft. Every gelato, every praline,
+        every bar — handmade since 2002 by the same obsessive hands.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#collection" class="btn btn--primary">
+          <span>Discover the collection</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+        <a href="#atelier" class="btn btn--ghost">
+          <i class="fa-regular fa-circle-play"></i>
+          <span>Watch the making</span>
+        </a>
+      </div>
+
+      <div class="hero__meta">
+        <div class="hero__meta-item">
+          <div class="num">24</div>
+          <div class="lbl">Years<br/>of craft</div>
+        </div>
+        <div class="hero__meta-item">
+          <div class="num">7</div>
+          <div class="lbl">Origin<br/>cacaos</div>
+        </div>
+        <div class="hero__meta-item">
+          <div class="num">∞</div>
+          <div class="lbl">Italian<br/>obsession</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#story" class="hero__scroll">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text">scroll</span>
+    </a>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Bean to bar</span><i class="fa-solid fa-asterisk"></i>
+      <span>Single origin</span><i class="fa-solid fa-asterisk"></i>
+      <span>Stone ground</span><i class="fa-solid fa-asterisk"></i>
+      <span>Slow conched</span><i class="fa-solid fa-asterisk"></i>
+      <span>Hand tempered</span><i class="fa-solid fa-asterisk"></i>
+      <span>Milano made</span><i class="fa-solid fa-asterisk"></i>
+      <span>Bean to bar</span><i class="fa-solid fa-asterisk"></i>
+      <span>Single origin</span><i class="fa-solid fa-asterisk"></i>
+      <span>Stone ground</span><i class="fa-solid fa-asterisk"></i>
+      <span>Slow conched</span><i class="fa-solid fa-asterisk"></i>
+      <span>Hand tempered</span><i class="fa-solid fa-asterisk"></i>
+      <span>Milano made</span><i class="fa-solid fa-asterisk"></i>
+    </div>
+  </div>
+
+  <!-- STORY / OUR GELATO -->
+  <section class="story" id="story">
+    <div class="story__grid">
+      <div class="story__visual">
+        <div class="story__image story__image--main">
+          <img src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?auto=format&fit=crop&w=1200&q=80" alt="Single-origin cacao beans"/>
+          <div class="story__badge">
+            <span class="story__badge-text">Crafted<br/>daily</span>
+            <span class="story__badge-dot"></span>
+          </div>
+        </div>
+        <div class="story__image story__image--small">
+          <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80" alt="Chocolate detail"/>
+        </div>
+        <div class="story__caption">
+          <span>Fig. 01</span>
+          <span>—</span>
+          <span>Single-origin cacao, fermented at source</span>
+        </div>
+      </div>
+
+      <div class="story__copy">
+        <div class="section-label"><span>01</span> · Our Gelato</div>
+        <h2 class="display">
+          <span>Italian taste,</span>
+          <span class="display__italic"><em>preserved</em></span>
+          <span>obsessed over,</span>
+          <span class="display__italic"><em>perfected.</em></span>
+        </h2>
+        <p>
+          Chocolat artisanal gelato is handmade fresh every morning by our
+          gelato makers, using premium ingredients sourced from the same
+          producers we've trusted for two decades.
+        </p>
+        <p>
+          Our recipes were not invented — they were uncovered. After years
+          of work and research, we preserve the soul of traditional Italian
+          flavors and quietly push them forward.
+        </p>
+
+        <ul class="story__list">
+          <li><span>01</span><strong>Bean</strong><em>Single-origin cacao, fermented at source</em></li>
+          <li><span>02</span><strong>Craft</strong><em>Stone-ground, conched 48–72 hours</em></li>
+          <li><span>03</span><strong>Cold</strong><em>Churned daily in small Milanese batches</em></li>
+        </ul>
+
+        <a href="#collection" class="btn btn--dark">
+          <span>Taste the collection</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+    <div class="collection__head">
+      <div class="section-label dark"><span>02</span> · The Collection</div>
+      <h2 class="display display--center">
+        <span>Twenty-four flavors.</span>
+        <span class="display__italic"><em>One obsession.</em></span>
+      </h2>
+      <div class="collection__filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="gelato">Gelato</button>
+        <button class="filter" data-filter="bars">Bars</button>
+        <button class="filter" data-filter="praline">Pralines</button>
+        <button class="filter" data-filter="hot">Hot Cacao</button>
+      </div>
+    </div>
+
+    <div class="collection__grid">
+      <article class="card" data-cat="gelato" data-name="Cacao Noir 78%" data-price="6.50" data-image="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 01</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80" alt="Cacao Noir gelato"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Gelato</div>
+          <h3>Cacao Noir 78%</h3>
+          <p>Single-origin Madagascar cacao, dark and unapologetic.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 6,50</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bars" data-name="Sale di Cervia" data-price="12.00" data-image="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 02</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80" alt="Tavoletta"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Tavoletta</div>
+          <h3>Sale di Cervia</h3>
+          <p>70% dark with hand-harvested Adriatic salt flakes.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 12,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="praline" data-name="Nocciola Piemonte" data-price="18.00" data-image="https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 03</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?auto=format&fit=crop&w=900&q=80" alt="Pralines"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Praline</div>
+          <h3>Nocciola Piemonte</h3>
+          <p>IGP hazelnuts folded into milk chocolate ganache.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 18,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="gelato" data-name="Pistacchio di Bronte" data-price="7.50" data-image="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 04</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?auto=format&fit=crop&w=900&q=80" alt="Pistacchio"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Gelato</div>
+          <h3>Pistacchio di Bronte</h3>
+          <p>Sicilian DOP pistachios, slow-roasted and stone-pressed.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 7,50</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="hot" data-name="Densa Antica" data-price="8.00" data-image="https://images.unsplash.com/photo-1517578239113-b03992dcdd25?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 05</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1517578239113-b03992dcdd25?auto=format&fit=crop&w=900&q=80" alt="Hot chocolate"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Cioccolata Calda</div>
+          <h3>Densa Antica</h3>
+          <p>Spoon-thick Milanese hot chocolate. Winters require it.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 8,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bars" data-name="Avorio & Vaniglia" data-price="11.00" data-image="images/avorio.jpg">
+        <div class="card__num">N° 06</div>
+        <div class="card__img">
+          <img src="images/avorio.jpg" alt="Avorio white chocolate bar"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Tavoletta</div>
+          <h3>Avorio &amp; Vaniglia</h3>
+          <p>White cacao butter scented with Madagascar vanilla.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 11,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="praline" data-name="Tartufo Nero" data-price="16.00" data-image="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 07</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=900&q=80" alt="Truffle praline"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Praline</div>
+          <h3>Tartufo Nero</h3>
+          <p>Hand-rolled dark truffle dusted in cocoa powder.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 16,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="hot" data-name="Bianca al Cardamomo" data-price="8.50" data-image="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 08</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=80" alt="Hot chocolate with cream"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Cioccolata Calda</div>
+          <h3>Bianca al Cardamomo</h3>
+          <p>White hot chocolate infused with green cardamom pods.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 8,50</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="praline" data-name="Gianduja Classico" data-price="19.00" data-image="https://images.unsplash.com/photo-1582176604856-e824b4736522?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 09</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1582176604856-e824b4736522?auto=format&fit=crop&w=900&q=80" alt="Gianduja praline"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Praline</div>
+          <h3>Gianduja Classico</h3>
+          <p>Silken hazelnut paste folded into 60% Piedmont chocolate.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 19,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="gelato" data-name="Stracciatella" data-price="6.80" data-image="https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 10</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=900&q=80" alt="Stracciatella gelato"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Gelato</div>
+          <h3>Stracciatella</h3>
+          <p>Fior di latte cream shattered with hand-cracked dark flakes.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 6,80</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bars" data-name="Arancia & Pepe" data-price="13.50" data-image="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 11</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=900&q=80" alt="Dark chocolate bar with orange"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Tavoletta</div>
+          <h3>Arancia &amp; Pepe</h3>
+          <p>72% dark with candied Sicilian orange and pink pepper.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 13,50</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="hot" data-name="Speziata Antica" data-price="9.00" data-image="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 12</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80" alt="Spiced hot chocolate"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Cioccolata Calda</div>
+          <h3>Speziata Antica</h3>
+          <p>Aztec-inspired hot cacao with chili, cinnamon and star anise.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 9,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="praline" data-name="Caramello al Sale" data-price="17.00" data-image="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=900&q=80">
+        <div class="card__num">N° 13</div>
+        <div class="card__img">
+          <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=900&q=80" alt="Caramel salt praline"/>
+        </div>
+        <div class="card__body">
+          <div class="card__cat">Praline</div>
+          <h3>Caramello al Sale</h3>
+          <p>Soft salted caramel cradled in 65% dark chocolate shell.</p>
+          <div class="card__foot">
+            <span class="card__price">€ 17,00</span>
+            <button class="card__btn"><i class="fa-solid fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="collection__foot">
+      <a href="#" class="link-arrow">
+        <span>View the entire menu — 24 creations</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ATELIER / PROCESS -->
+  <section class="atelier" id="atelier">
+    <div class="atelier__head">
+      <div class="section-label dark"><span>03</span> · Inside the Atelier</div>
+      <h2 class="display">
+        <span>From bean</span>
+        <span class="display__italic"><em>to spoon —</em></span>
+        <span>seven slow steps.</span>
+      </h2>
+    </div>
+
+    <div class="atelier__process">
+      <div class="process-track" id="processTrack">
+
+        <article class="step">
+          <div class="step__num">01</div>
+          <div class="step__img"><img src="https://images.unsplash.com/photo-1631206753348-db44968fd440?auto=format&fit=crop&w=900&q=80" alt="Cacao pod sourcing"/></div>
+          <h4>Sourcing</h4>
+          <p>We travel to Madagascar, Ecuador and Vietnam to taste cacao at the farm.</p>
+        </article>
+
+        <article class="step">
+          <div class="step__num">02</div>
+          <div class="step__img"><img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=900&q=80" alt="Roasting"/></div>
+          <h4>Roasting</h4>
+          <p>Slow, low-temperature roasts that protect each origin's character.</p>
+        </article>
+
+        <article class="step">
+          <div class="step__num">03</div>
+          <div class="step__img"><img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=900&q=80" alt="Grinding"/></div>
+          <h4>Grinding</h4>
+          <p>Stone mills turn nibs into liquor — silent and patient.</p>
+        </article>
+
+        <article class="step">
+          <div class="step__num">04</div>
+          <div class="step__img"><img src="images/conching.jpg" alt="Conching chocolate"/></div>
+          <h4>Conching</h4>
+          <p>72 hours of refinement. Bitterness fades, aromas bloom.</p>
+        </article>
+
+        <article class="step">
+          <div class="step__num">05</div>
+          <div class="step__img"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=80" alt="Tempering"/></div>
+          <h4>Tempering</h4>
+          <p>Crystals aligned by hand on cold marble. Snap, gloss, melt.</p>
+        </article>
+
+        <article class="step">
+          <div class="step__num">06</div>
+          <div class="step__img"><img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=900&q=80" alt="Moulding"/></div>
+          <h4>Moulding</h4>
+          <p>Each tavoletta poured into hand-cut molds, set overnight.</p>
+        </article>
+
+        <article class="step">
+          <div class="step__num">07</div>
+          <div class="step__img"><img src="https://images.unsplash.com/photo-1551529834-525807d6b4f3?auto=format&fit=crop&w=900&q=80" alt="Tasting"/></div>
+          <h4>Tasting</h4>
+          <p>Nothing leaves the atelier without a final spoon — and a smile.</p>
+        </article>
+
+      </div>
+
+      <div class="process-controls">
+        <button class="process-btn" id="prevStep" aria-label="Previous"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <div class="process-progress"><span id="processProgress"></span></div>
+        <button class="process-btn" id="nextStep" aria-label="Next"><i class="fa-solid fa-arrow-right-long"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- A DAY IN THE STORE -->
+  <section class="day">
+    <div class="day__bg">
+      <img src="https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=2000&q=80" alt="Cafe atmosphere"/>
+      <div class="day__bg-overlay"></div>
+    </div>
+
+    <div class="day__inner">
+      <div class="day__head">
+        <div class="section-label light"><span>04</span> · A Day With Us</div>
+        <h2 class="display display--light">
+          <span>From morning</span>
+          <span class="display__italic"><em>espresso</em></span>
+          <span>to midnight</span>
+          <span class="display__italic"><em>cioccolata.</em></span>
+        </h2>
+      </div>
+
+      <div class="day__cards">
+        <article class="day-card">
+          <div class="day-card__time">07 — 11</div>
+          <div class="day-card__img">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Breakfast"/>
+          </div>
+          <h3>Colazione</h3>
+          <p>Cornetti, espresso and a square of dark.</p>
+        </article>
+
+        <article class="day-card">
+          <div class="day-card__time">12 — 15</div>
+          <div class="day-card__img">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Pranzo"/>
+          </div>
+          <h3>Pranzo</h3>
+          <p>Light Milanese plates and chocolate pairings.</p>
+        </article>
+
+        <article class="day-card">
+          <div class="day-card__time">15 — 19</div>
+          <div class="day-card__img">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=800&q=80" alt="Snack"/>
+          </div>
+          <h3>Merenda</h3>
+          <p>The sacred hour — gelato, pralines, and people-watching.</p>
+        </article>
+
+        <article class="day-card">
+          <div class="day-card__time">19 — 23</div>
+          <div class="day-card__img">
+            <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80" alt="Evening chocolate boxes"/>
+          </div>
+          <h3>Sera</h3>
+          <p>Boxes wrapped by hand, ready to be carried home.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="journal" id="journal">
+    <div class="journal__head">
+      <div class="section-label dark"><span>05</span> · The Journal</div>
+      <div class="journal__head-row">
+        <h2 class="display">
+          <span>Words from</span>
+          <span class="display__italic"><em>the atelier.</em></span>
+        </h2>
+        <a href="#" class="link-arrow">
+          <span>All entries</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="journal__grid">
+      <article class="journal-card journal-card--feature">
+        <div class="journal-card__img">
+          <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1400&q=80" alt="Editorial"/>
+        </div>
+        <div class="journal-card__body">
+          <div class="journal-card__meta">
+            <span>Editorial</span>
+            <span>·</span>
+            <span>20 Apr 2026</span>
+            <span>·</span>
+            <span>6 min read</span>
+          </div>
+          <h3>Chocolat at Milano Design Film Festival</h3>
+          <p>
+            "Design is a marvelous mission. Go out and spread the word,"
+            once said Massimo Vignelli. This was exactly what we aimed for
+            when we became service sponsor at the Milano Design Film
+            Festival — promoting good film and good cacao, hand in hand.
+          </p>
+          <a href="#" class="link-arrow">
+            <span>Read the entry</span>
+            <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </div>
+      </article>
+
+      <div class="journal__side">
+        <article class="journal-card journal-card--side">
+          <div class="journal-card__img">
+            <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&w=800&q=80" alt="Origin trip"/>
+          </div>
+          <div class="journal-card__body">
+            <div class="journal-card__meta"><span>Origin</span><span>·</span><span>18 Apr 2026</span></div>
+            <h4>Notes from Madagascar</h4>
+          </div>
+        </article>
+
+        <article class="journal-card journal-card--side">
+          <div class="journal-card__img">
+            <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=800&q=80" alt="New release"/>
+          </div>
+          <div class="journal-card__body">
+            <div class="journal-card__meta"><span>Release</span><span>·</span><span>10 Apr 2026</span></div>
+            <h4>Tavoletta No. 24 — Sale di Cervia</h4>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / PRESS -->
+  <section class="press">
+    <div class="press__inner">
+      <div class="section-label"><span>06</span> · In the Press</div>
+
+      <div class="press__quote">
+        <p class="press__mark">"</p>
+        <blockquote>
+          A pilgrimage for anyone who believes chocolate
+          <em>can be architecture.</em>
+        </blockquote>
+        <div class="press__attribution">
+          <span class="press__name">Vogue Italia</span>
+          <span class="press__sep">—</span>
+          <span class="press__role">November 2025</span>
+        </div>
+      </div>
+
+      <div class="press__logos">
+        <span>Monocle</span>
+        <span class="dot"></span>
+        <span>Wallpaper*</span>
+        <span class="dot"></span>
+        <span>NYT</span>
+        <span class="dot"></span>
+        <span>Cereal</span>
+        <span class="dot"></span>
+        <span>FT Weekend</span>
+        <span class="dot"></span>
+        <span>Domus</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT / JOIN -->
+  <section class="visit" id="visit">
+    <div class="visit__grid">
+      <div class="visit__copy">
+        <div class="section-label"><span>07</span> · Visit Us</div>
+        <h2 class="display">
+          <span>Find us</span>
+          <span class="display__italic"><em>where the city</em></span>
+          <span>slows down.</span>
+        </h2>
+        <p>
+          Our mission is to share Italian taste expertise with the world —
+          one square at a time. If craftsmanship and uncompromising quality
+          matter to you, write to us about your project.
+        </p>
+
+        <div class="visit__locations">
+          <div class="loc">
+            <div class="loc__city">Milano</div>
+            <div class="loc__addr">Via Brera 12, 20121<br/>+39 02 5500 8939</div>
+            <div class="loc__hours">Mon — Sun · 07:30 → 23:00</div>
+          </div>
+          <div class="loc">
+            <div class="loc__city">Singapore</div>
+            <div class="loc__addr">Tanjong Pagar 88<br/>+65 6500 8939</div>
+            <div class="loc__hours">Daily · 08:00 → 22:30</div>
+          </div>
+          <div class="loc">
+            <div class="loc__city">Jeddah</div>
+            <div class="loc__addr">Riyadh St. 26<br/>+966 00 500 8939</div>
+            <div class="loc__hours">Daily · 09:00 → 00:00</div>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn--dark">
+          <span>Reserve a tasting</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+
+      <div class="visit__visual">
+        <img src="images/visit-us.jpg" alt="Couple sharing chocolate pancakes — Milano slow morning"/>
+        <div class="visit__plaque">
+          <div class="visit__plaque-mark">C</div>
+          <div class="visit__plaque-est">Est. 2002</div>
+          <div class="visit__plaque-text">Maison du Cacao</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="newsletter__inner">
+      <h2 class="display display--center display--light">
+        <span>Letters from</span>
+        <span class="display__italic"><em>the atelier —</em></span>
+        <span>once a month, never spam.</span>
+      </h2>
+
+      <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('button').innerHTML='<span>Subscribed ✦</span>';">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">
+          <span>Subscribe</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+      </form>
+
+      <div class="newsletter__tags">
+        <span>Recipes</span>
+        <span>·</span>
+        <span>Origin notes</span>
+        <span>·</span>
+        <span>Quiet releases</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__mark">C</div>
+        <div class="footer__title">Chocolat</div>
+        <div class="footer__sub">Maison du Cacao · Milano</div>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h5>Maison</h5>
+          <a href="#story">Our story</a>
+          <a href="#atelier">The atelier</a>
+          <a href="#journal">Journal</a>
+          <a href="#">Sustainability</a>
+        </div>
+        <div class="footer__col">
+          <h5>Shop</h5>
+          <a href="#collection">Gelato</a>
+          <a href="#collection">Tavolette</a>
+          <a href="#collection">Pralines</a>
+          <a href="#collection">Gift boxes</a>
+        </div>
+        <div class="footer__col">
+          <h5>Visit</h5>
+          <a href="#visit">Milano</a>
+          <a href="#visit">Singapore</a>
+          <a href="#visit">Jeddah</a>
+          <a href="#">Private events</a>
+        </div>
+        <div class="footer__col">
+          <h5>Follow</h5>
+          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fa-brands fa-pinterest"></i> Pinterest</a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+          <a href="#"><i class="fa-brands fa-spotify"></i> Spotify</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__big" aria-hidden="true">CHOCOLAT</div>
+
+    <div class="footer__bottom">
+      <div>© 2002—2026 Chocolat S.r.l. — All rights reserved</div>
+      <div>A brand by <span>Italian Concept</span></div>
+      <div>Designed with <i class="fa-solid fa-heart"></i> by x39OME</div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up-long"></i>
+  </button>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cart__head">
+      <div class="cart__title">
+        <span class="cart__label">Your basket</span>
+        <h3>La Cesta</h3>
+      </div>
+      <button class="cart__close" id="cartClose" aria-label="Close cart">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="cart__body" id="cartBody">
+      <!-- empty state -->
+      <div class="cart__empty" id="cartEmpty">
+        <div class="cart__empty-mark">C</div>
+        <p class="cart__empty-title">Your basket is empty</p>
+        <p class="cart__empty-text">Add a few creations from our collection — handmade in Milano, sent with care.</p>
+        <button class="btn btn--dark cart__empty-btn" id="cartGoShop">
+          <span>Browse the collection</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+      </div>
+      <!-- items list (filled by JS) -->
+      <ul class="cart__items" id="cartItems"></ul>
+    </div>
+
+    <div class="cart__foot" id="cartFoot">
+      <div class="cart__row">
+        <span>Subtotal</span>
+        <span class="cart__subtotal" id="cartSubtotal">€ 0,00</span>
+      </div>
+      <div class="cart__row cart__row--small">
+        <span>Shipping</span>
+        <span><em>Calculated at checkout</em></span>
+      </div>
+      <button class="btn btn--primary cart__checkout">
+        <span>Checkout</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+      <p class="cart__note">Free shipping above € 60 · Hand-wrapped in Milano</p>
+    </div>
+  </aside>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="toast__icon"><i class="fa-solid fa-check"></i></div>
+    <div class="toast__text">
+      <span class="toast__title">Added to basket</span>
+      <span class="toast__name" id="toastName"></span>
+    </div>
+    <button class="toast__view" id="toastView">View basket</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
