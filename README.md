@@ -9,4 +9,4 @@
 ## Chocolatier Template Old design from 2023
 
 - [repo](https://github.com/x39OME/chocolatier-template-website)
-- Live Dmo [Link](https://x39ome.github.io/chocolatier-template-website/)
+- Live Demo [Link](https://x39ome.github.io/chocolatier-template-website/)
