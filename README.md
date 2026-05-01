@@ -6,7 +6,7 @@
 - This is the result.
 - Without human intervention or any modification to the design
 
-# Chocolatier Template Old design from 2023
+## Chocolatier Template Old design from 2023
 
 - [repo](https://github.com/x39OME/chocolatier-template-website)
 - Live Dmo [Link](https://x39ome.github.io/chocolatier-template-website/)
