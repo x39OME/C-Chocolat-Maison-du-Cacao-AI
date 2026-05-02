@@ -475,6 +475,7 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
   opacity: 0;
   transform: scale(1.08);
   transition: opacity 1.6s var(--ease-out), transform 6s var(--ease-out);
+  hight:1500px
 }
 .hero__slide.is-active {
   opacity: 1;
