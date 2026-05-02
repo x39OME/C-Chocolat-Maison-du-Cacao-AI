@@ -700,10 +700,10 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
 }
 
 .hero__lead {
-  max-width: 480px;
+  max-width: 350px;
   font-family: var(--serif); font-style: italic; font-size: 17px;
   line-height: 1.6; color: rgba(243,235,219,.85);
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   animation: fadeUp 1s 1.2s var(--ease-out) backwards;
   transition: opacity .5s var(--ease-out), transform .5s var(--ease-out);
   height:83px
