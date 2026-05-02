@@ -311,7 +311,7 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
 .nav__cta i { transition: transform .4s var(--ease-out); }
 .nav__cta:hover i { transform: translateX(4px); }
 
-.nav__burger { display: none; flex-direction: column; gap: 5px; margin-left:-7px; z-index: 200; position: relative; }
+.nav__burger { display: none; flex-direction: column; gap: 5px; margin-left:-9px; z-index: 200; position: relative; }
 .nav__burger span {
   display: block; width: 22px; height: 1px; background: var(--ink);
   transition: all .35s var(--ease);
@@ -717,12 +717,13 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
   margin-bottom: 80px;
   animation: fadeUp 1s 1.4s var(--ease-out) backwards;
 }
-
 .hero__meta {
-  display: flex; gap: clamp(30px, 5vw, 80px);
-  padding-top: 30px;
+  display: flex;
+  gap: clamp(30px, 5vw, 80px);
+  padding-top: 25px;
   border-top: 1px solid rgba(243,235,219,.15);
   animation: fadeUp 1s 1.6s var(--ease-out) backwards;
+  justify-content: center;
 }
 .hero__meta-item .num {
   font-family: var(--display); font-size: clamp(40px, 5vw, 64px);
