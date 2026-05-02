@@ -311,7 +311,7 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
 .nav__cta i { transition: transform .4s var(--ease-out); }
 .nav__cta:hover i { transform: translateX(4px); }
 
-.nav__burger { display: none; flex-direction: column; gap: 5px; margin-right:-6px; z-index: 200; position: relative; }
+.nav__burger { display: none; flex-direction: column; gap: 5px; margin-left:-6px; z-index: 200; position: relative; }
 .nav__burger span {
   display: block; width: 22px; height: 1px; background: var(--ink);
   transition: all .35s var(--ease);
