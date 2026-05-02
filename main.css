@@ -577,10 +577,7 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
     letter-spacing: .2em;
     gap: 10px;
   }
-  /* leave horizontal room on the right edge for the dots */
-  .hero__content {
-    padding-right: 40px;
-  }
+
 
   /* Scroll indicator: move out of meta block area to bottom-left */
   .hero__scroll {
