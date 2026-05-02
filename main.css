@@ -311,7 +311,7 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
 .nav__cta i { transition: transform .4s var(--ease-out); }
 .nav__cta:hover i { transform: translateX(4px); }
 
-.nav__burger { display: none; flex-direction: column; gap: 5px; margin-left:-6px; z-index: 200; position: relative; }
+.nav__burger { display: none; flex-direction: column; gap: 5px; margin-right:-6px; z-index: 200; position: relative; }
 .nav__burger span {
   display: block; width: 22px; height: 1px; background: var(--ink);
   transition: all .35s var(--ease);
@@ -549,12 +549,98 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
 }
 
 @media (max-width: 900px) {
+  /* Dots: keep vertical on right side WITH labels, just shifted slightly to avoid CTAs */
   .hero__dots {
-    right: 20px;
+    top: 50%;
+    bottom: auto;
+    right: 14px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 12px;
   }
-  .hero__dot { width: 20px; }
-  .hero__dot::before { width: 20px; }
-  .hero__dot::after { display: none; }
+  .hero__dot { width: 18px; height: 12px; }
+  .hero__dot::before,
+  .hero__dot::after { width: 18px; }
+  .hero__dot .label {
+    right: 26px;
+    font-size: 10px;
+  }
+
+  /* Hero CTAs: shrink so they don't extend into the dots column */
+  .hero__ctas {
+    gap: 10px;
+    margin-bottom: 60px;
+  }
+  .hero__ctas .btn {
+    padding: 13px 22px;
+    font-size: 11px;
+    letter-spacing: .2em;
+    gap: 10px;
+  }
+  /* leave horizontal room on the right edge for the dots */
+  .hero__content {
+    padding-right: 40px;
+  }
+
+  /* Scroll indicator: move out of meta block area to bottom-left */
+  .hero__scroll {
+    bottom: 70px;
+    left: clamp(20px, 4vw, 50px);
+    transform: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero__scroll-line {
+    width: 30px;
+    height: 1px;
+  }
+  .hero__scroll-line::after {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    animation: scrollDownMobile 2.5s var(--ease) infinite;
+  }
+  @keyframes scrollDownMobile {
+    0%   { left: -50%; }
+    100% { left: 100%; }
+  }
+
+  /* Hero: extra bottom padding so meta block doesn't crash into scroll */
+  .hero {
+    padding-bottom: clamp(110px, 20vw, 160px);
+  }
+
+  .hero__meta {
+    margin-bottom: 10px;
+  }
+
+  /* Burger menu: remove default padding, refine sizing */
+  .nav__burger {
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    transition: background .3s var(--ease), border-color .3s var(--ease);
+  }
+  .nav__burger:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .nav__burger:hover span {
+    background: var(--bg);
+  }
+  .nav__burger span {
+    width: 16px;
+  }
+  .nav__burger.open {
+    background: transparent;
+    border-color: transparent;
+  }
 }
 
 .hero__decor {
