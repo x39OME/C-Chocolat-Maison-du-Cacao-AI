@@ -475,7 +475,6 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
   opacity: 0;
   transform: scale(1.08);
   transition: opacity 1.6s var(--ease-out), transform 6s var(--ease-out);
-  height:1500px
 }
 .hero__slide.is-active {
   opacity: 1;
@@ -707,6 +706,7 @@ button { font-family: inherit; cursor: none; border: none; background: none; col
   margin-bottom: 50px;
   animation: fadeUp 1s 1.2s var(--ease-out) backwards;
   transition: opacity .5s var(--ease-out), transform .5s var(--ease-out);
+  height:83px
 }
 .hero__lead.is-changing {
   opacity: 0;
