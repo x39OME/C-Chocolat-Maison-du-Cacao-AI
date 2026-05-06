@@ -10,3 +10,9 @@
 
 - [repo](https://github.com/x39OME/chocolatier-template-website)
 - Live Demo [Link](https://x39ome.github.io/chocolatier-template-website/)
+
+### Preview Project
+
+<img src="Chocolat—Maison du Cacao depuis2002.png" alt="Preview Project" />
+
+![This main img]()
