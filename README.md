@@ -6,12 +6,14 @@
 - This is the result.
 - Without human intervention or any modification to the design
 
-## Chocolatier Template Old design from 2023
+### Chocolatier Template Old design from 2023
 
 - [repo](https://github.com/x39OME/chocolatier-template-website)
 - Live Demo [Link](https://x39ome.github.io/chocolatier-template-website/)
 
 ### Preview Project
+
+- Live Demo [Link](https://x39ome.github.io/C-Chocolat-Maison-du-Cacao-AI/)
 
 <img src="Chocolat—Maison du Cacao depuis2002.png" alt="Preview Project" />
 
